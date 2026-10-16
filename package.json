@@ -34,8 +34,8 @@
     "electron-builder": "^26.15.3",
     "sharp": "^0.35.4",
     "typescript": "~5.8.2",
-    "vite": "^6.2.0",
-    "vitest": "^4.1.4",
+    "vite": "^8.3.4",
+    "vitest": "^5.0.5",
     "wrangler": "latest"
   },
   "overrides": {
