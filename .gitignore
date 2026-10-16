@@ -1,0 +1,40 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+
+# ─── Secrets — MUST NOT be committed (see SECURITY-ENV-DOCTRINE.md §1, §5) ───
+*.local
+.env.production
+.env.staging
+.env.*.local
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+service-account*.json
+*-credentials.json
+*.secret
+
+# Safe Bubble audit logs (contain request metadata)
+safe-bubble/logs/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
