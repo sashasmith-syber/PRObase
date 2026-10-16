@@ -1,0 +1,36 @@
+name: Security and Build
+
+on:
+  push:
+    branches:
+      - main
+      - cursor/**
+  pull_request:
+
+jobs:
+  security-and-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type check
+        run: npm run typecheck
+
+      - name: Unit tests
+        run: npm run test
+
+      - name: Key rotation check
+        run: npm run security:check-rotation
+
+      - name: Build and chunk budget
+        run: npm run build:analyze
